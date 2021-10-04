@@ -1,13 +1,4 @@
-import { useHistory } from "react-router";
-import { useParams } from "react-router-dom";
-
-export const ListProducts = ({ products }) => {
-  const { params } = useParams();
-
-  const history = useHistory();
-  const toCart = () => {
-    history.push("/cart");
-  };
+export const ListProducts = ({ products, setCart, cart }) => {
   return (
     <>
       <h2>Listar produtos</h2>
@@ -21,6 +12,9 @@ export const ListProducts = ({ products }) => {
             </tr>
             <tr>
               <td colSpan="3">Descrição: {!!i.description && i.description}</td>
+            </tr>
+            <tr>
+              <button onClick={() => setCart([...cart, i])}>To cart</button>
             </tr>
           </li>
         ))}

@@ -44,7 +44,12 @@ export const Routes = () => {
         />
       </Route>
       <Route exact path="/">
-        <Products products={products} setProducts={setProducts} />
+        <Products
+          products={products}
+          setProducts={setProducts}
+          cart={cart}
+          setCart={setCart}
+        />
       </Route>
     </Switch>
   );

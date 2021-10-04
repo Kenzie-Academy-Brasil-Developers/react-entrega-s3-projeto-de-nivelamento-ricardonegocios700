@@ -1,6 +1,6 @@
 import { useState } from "react/cjs/react.development";
 
-export const Search = ({ setResult, products }) => {
+export const Search = ({ setResult, products, setExibeResult }) => {
   const [search, setSearch] = useState();
   const handelSearch = () => {
     setResult(
@@ -8,6 +8,7 @@ export const Search = ({ setResult, products }) => {
         return e.name === search;
       })
     );
+    //setExibeResult(true);
   };
 
   return (
